@@ -50,7 +50,10 @@ h3{
     margin-left: 20%;
 }
 
-
+.contenedoraCards{
+    margin-left: 10%;
+    margin-right: 10% ;
+}
 footer p{
     background: #363333;
     padding: 20px 0;
