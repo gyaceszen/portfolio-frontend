@@ -8,6 +8,7 @@ import { EducacionComponent } from './misComponentes/educacion/educacion.compone
 import { SkillsComponent } from './misComponentes/skills/skills.component';
 import { ProyectosComponent } from './misComponentes/proyectos/proyectos.component';
 import { FooterComponent } from './misComponentes/footer/footer.component';
+import { ExperienciasComponent } from './misComponentes/experiencias/experiencias.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './misComponentes/footer/footer.component';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    ExperienciasComponent
   ],
   imports: [
     BrowserModule
