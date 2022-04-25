@@ -35,6 +35,11 @@ h3{
 
 .panelBotones{
     float: right;
+    margin-left: 5px;
+}
+
+.panelBotones button{
+    margin-right: 5px;
 }
 
 .imgLogoTrabajo{
