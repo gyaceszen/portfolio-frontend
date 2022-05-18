@@ -1,11 +1,11 @@
-<div class="acercaDe">
-    <img class="imgPerfil" src="../assets/img/messi.jpg" alt="AQUI VA MI FOTO DE PERFIL">
-    <h1>Lucas Gaston Yaceszen</h1>
+<div class="acercaDe" *ngIf="usuario">
+    <img class="imgPerfil" src="{{usuario.urlImgUsuario}}" alt="AQUI VA MI FOTO DE PERFIL">
+    <h1>{{usuario.nombreUsuario}} {{usuario.apellidoUsuario}}</h1>
     <div class="panelBotones"> 
         <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-plus"></i></button>
         <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-pen-to-square"></i></button>
         <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-trash"></i></button>
     </div>
-    <h3>Full Stack Developer Jr</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aut nesciunt doloribus voluptatum sed, obcaecati magni aperiam consectetur illo quasi totam sapiente quisquam voluptates molestias veniam repudiandae ipsa maxime iste?</p>
+    <h3>{{usuario.tituloUsuario}}</h3>
+    <p>{{usuario.descUsuario}}</p>
 </div>

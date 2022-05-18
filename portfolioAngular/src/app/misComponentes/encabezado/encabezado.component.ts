@@ -1,4 +1,7 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario';
+//import { EncabezadoService } from 'src/app/servicios/encabezado.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
+  /*
+  public usuario : Usuario | undefined;
+  public editUsuario: Usuario | undefined;
+  */
+
   constructor() { }
 
   ngOnInit(): void {
+    this.getUser();
+
   }
 
+  public getUser():void{
+    /*this.encabezadoService.getUser().subscribe({
+      next: (response: Usuario) =>{
+        this.usuario=response
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })*/
+  }
+  
 }

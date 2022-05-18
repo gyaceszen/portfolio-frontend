@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './misComponentes/encabezado/encabezado.component';
 import { AcercaDeComponent } from './misComponentes/acerca-de/acerca-de.component';
@@ -9,6 +9,7 @@ import { SkillsComponent } from './misComponentes/skills/skills.component';
 import { ProyectosComponent } from './misComponentes/proyectos/proyectos.component';
 import { FooterComponent } from './misComponentes/footer/footer.component';
 import { ExperienciasComponent } from './misComponentes/experiencias/experiencias.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { ExperienciasComponent } from './misComponentes/experiencias/experiencia
     ExperienciasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
