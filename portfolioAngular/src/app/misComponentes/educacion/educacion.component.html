@@ -1,20 +1,39 @@
 <div class="miEducacion">
-    <h3>Educación</h3>
+  <h3>
+    Educación
+    <button type="button" style="float: right" class="btn btn-outline-dark">
+      Añadir
+    </button>
+  </h3>
 
+  <div *ngFor="let educacion of educaciones">
     <div class="alignExp">
-        <div class="panelBotones"> 
-            <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-plus"></i></button>
-            <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-trash"></i></button>
-        </div>
-        <img src="../assets/img/itec.jpg" class="imgLogoTrabajo flex" alt="">
-        <h4>Itec Río Cuarto</h4>
-        <a href="https://www.itecriocuarto.org.ar" style="text-decoration: none;"> iTec</a>
-        <p>Técnico Superior en Análisis de Sistemas. (2013-2016, sin finalizar).</p><br>
-        <img src="../assets/img/isiv.png" class="imgLogoTrabajo flex" alt="">
-        <h4>Instituto Superior de Informática Virasoro</h4>
-        <a href="https://www.isiv.edu.ar/analista-de-sistemas" style="text-decoration: none;">Isiv</a>
-        <p>Técnico Superior en Análisis de Sistemas. (2017-2018, finalizado).</p>
-    </div>
+      <div class="panelBotones">
+        <!-- <button type="button" class="btn btn-outline-dark">
+          <i class="fa-solid fa-plus"></i>
+        </button> -->
+        <button type="button" class="btn btn-outline-dark">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+        <button type="button" class="btn btn-outline-dark">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
 
+      <img
+        src="{{ educacion.urlImgEducacion }}"
+        class="imgLogoTrabajo flex"
+        alt=""
+      />
+      <h4>{{ educacion.nombreInstEducacion }}</h4>
+      <a
+        href="{{ educacion.linkEducacion }}"
+        style="text-decoration: none"
+        target="_blank"
+        >Más info</a
+      >
+      <p>{{ educacion.descEducacion }}</p>
+      <br />
+    </div>
+  </div>
 </div>
