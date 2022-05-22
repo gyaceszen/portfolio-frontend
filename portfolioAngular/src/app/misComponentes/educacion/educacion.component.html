@@ -249,4 +249,54 @@
       </div>
     </div>
   </div>
+
+  <!-- CREO MI MODAL PARA ELIMINAR  - EDUCACIONES -->
+  <div
+    class="modal fade"
+    data-bs-toggle="modal"
+    data-bs-target="deleteModelLabel"
+    id="deleteEducacionModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="deleteModelLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModelLabel">Eliminar Educación</h5>
+        </div>
+        <div class="modal-body">
+          <p>
+            ¿Desea eliminar
+            <strong>{{ borrarEducaciones?.nombreInstEducacion }}</strong
+            >?
+          </p>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              (click)="onDeleteEducacion(borrarEducaciones!.idEducacion)"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Si
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- alerta para cuando no hay nada cargado -->
+  <div *ngIf="educaciones?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">No Educacion</h4>
+    </div>
+  </div>
 </div>
