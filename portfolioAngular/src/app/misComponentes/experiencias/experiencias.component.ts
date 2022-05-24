@@ -42,10 +42,10 @@ export class ExperienciasComponent implements OnInit {
       button.setAttribute('data-bs-target', '#agregarExperienciasModal');
     }else if(mode==='delete'){
       this.borrarExperiencias = experiencias;
-      button.setAttribute('data-bs-target', '#deleteEducacionModal' )
+      button.setAttribute('data-bs-target', '#deleteExperienciaModal' )
     }else if(mode==='edit'){
       this.editExperiencias = experiencias;
-      button.setAttribute('data-bs-target', '#editarEducacionModal' )
+      button.setAttribute('data-bs-target', '#editarExperienciaModal' )
     }
 
     container?.appendChild(button);
