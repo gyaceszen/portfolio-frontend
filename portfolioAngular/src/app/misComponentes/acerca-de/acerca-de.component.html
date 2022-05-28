@@ -1,4 +1,5 @@
 <div class="acercaDe" *ngIf="usuario">
+
   <img
     class="imgPerfil"
     src="{{ usuario.urlImgUsuario }}"
@@ -7,13 +8,132 @@
   <h1>{{ usuario.nombreUsuario }} {{ usuario.apellidoUsuario }}</h1>
   <div class="panelBotones">
     <!-- <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-plus"></i></button> -->
-    <button type="button" class="btn btn-outline-dark">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button type="button" class="btn btn-outline-dark">
+        <button
+          type="button"
+          class="btn btn-outline-dark"
+          (click)="onOpenModal('edit', usuario)"
+          data-bs-toggle="modal"
+          data-bs-target="#editarUsuarioModal"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+    <!-- <button type="button" class="btn btn-outline-dark">
       <i class="fa-solid fa-trash"></i>
-    </button>
+    </button> -->
   </div>
   <h3>{{ usuario.tituloUsuario }}</h3>
   <p>{{ usuario.descUsuario }}</p>
+
+  <!-- CREO MI MODAL PARA EDITAR EDUCACIONES -->
+  <div
+    class="modal fade"
+    id="editarUsuarioModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modalTituloEditar"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTituloEditar">
+              <strong>Editar Usuario</strong>
+            </h5>
+            <div class="modal-body">
+              <form #editForm="ngForm">
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input
+                    type="text"
+                    ngModel="{{ editarUsuario?.nombreUsuario }}"
+                    name="nombreUsuario"
+                    class="form-control"
+                    id="nombreUsuario"
+                    placeholder="Nombre"
+                  />
+                </div>
+                <input
+                  type="hidden"
+                  ngModel="{{ editarUsuario?.idUsuario }}"
+                  name="idUsuario"
+                  class="form-control"
+                  id="idUsuario"
+                  placeholder=""
+                />
+                <div class="form-group">
+                  <label for="apellidoUsuario">Apellido</label>
+                  <input
+                    type="text"
+                    ngModel="{{ editarUsuario?.apellidoUsuario }}"
+                    name="apellidoUsuario"
+                    class="form-control"
+                    id="apellidoUsuario"
+                    placeholder="Apellido"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tituloUsuario">Título</label>
+                  <input
+                    type="text"
+                    ngModel="{{ editarUsuario?.tituloUsuario }}"
+                    name="tituloUsuario"
+                    class="form-control"
+                    id="tituloUsuario"
+                    placeholder="Título"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="descUsuario">Descripción Usuario</label>
+                  <input
+                    type="text"
+                    ngModel="{{ editarUsuario?.descUsuario }}"
+                    name="descUsuario"
+                    class="form-control"
+                    id="descUsuario"
+                    placeholder="Descripción usuario"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="urlImgUsuario">Imágen Perfil</label>
+                  <input
+                    type="text"
+                    ngModel="{{ editarUsuario?.urlImgUsuario }}"
+                    name="urlImgUsuario"
+                    class="form-control"
+                    id="urlImgUsuario"
+                    placeholder="Imagen URL Perfil"
+                  />
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    id=""
+                    data-bs-dismiss="modal"
+                    class="btn btn-primary"
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    (click)="onUpdateUsuario(editForm.value)"
+                    data-bs-dismiss="modal"
+                    class="btn btn-primary"
+                  >
+                    Editar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
