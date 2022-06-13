@@ -10,6 +10,7 @@ import { ProyectosComponent } from './misComponentes/proyectos/proyectos.compone
 import { FooterComponent } from './misComponentes/footer/footer.component';
 import { ExperienciasComponent } from './misComponentes/experiencias/experiencias.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
