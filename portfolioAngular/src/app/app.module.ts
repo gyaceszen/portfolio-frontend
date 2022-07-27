@@ -12,6 +12,9 @@ import { ExperienciasComponent } from './misComponentes/experiencias/experiencia
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { InicioComponent } from './misComponentes/inicio/inicio.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +24,20 @@ import { AppRoutingModule } from './app-routing.module';
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
-    ExperienciasComponent
+    ExperienciasComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: 'dev-agtxkfyd.us.auth0.com',
+      clientId: 'HzXI9Xry6pzlacGLFogx3NHgAqxzMNbz',
+      cacheLocation: 'localstorage',
+      useRefreshTokens: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
