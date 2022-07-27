@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Experiencias } from 'src/app/models/experiencias';
 import { ExperienciasService } from 'src/app/servicios/experiencias.service';
-
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-experiencias',
@@ -16,7 +16,7 @@ export class ExperienciasComponent implements OnInit {
   public editExperiencias: Experiencias | undefined;
   public borrarExperiencias: Experiencias | undefined;
 
-  constructor(private experienciasService:ExperienciasService) { }
+  constructor(public auth: AuthService, private experienciasService:ExperienciasService) { }
 
   ngOnInit(): void {
     this.getExperiencias();

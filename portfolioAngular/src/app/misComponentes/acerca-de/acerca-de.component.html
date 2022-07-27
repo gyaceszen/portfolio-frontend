@@ -14,6 +14,7 @@
           (click)="onOpenModal('edit', usuario)"
           data-bs-toggle="modal"
           data-bs-target="#editarUsuarioModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-pen-to-square"></i>
         </button>

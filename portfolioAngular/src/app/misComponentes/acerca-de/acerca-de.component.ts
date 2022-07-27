@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-acerca-de',
@@ -13,7 +14,7 @@ export class AcercaDeComponent implements OnInit {
   public usuario: Usuario | undefined;
   public editarUsuario: Usuario | undefined;
   public borrarUsuario: Usuario | undefined;
-  constructor(private acercadeService: AcercaDeService) { }
+  constructor(public auth: AuthService, private acercadeService: AcercaDeService) { }
 
   ngOnInit(): void {
     this.getUsuario();

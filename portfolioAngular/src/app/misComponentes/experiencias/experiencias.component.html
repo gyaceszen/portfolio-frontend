@@ -10,6 +10,7 @@
       (click)="onOpenModal('add')"
       data-bs-toggle="modal"
       data-bs-target="#agregarExperienciasModal"
+      *ngIf="(auth.isAuthenticated$ | async)"
     >
       Añadir
     </button>
@@ -24,6 +25,7 @@
           (click)="onOpenModal('edit', miexperiencias)"
           data-bs-toggle="modal"
           data-bs-target="#editarExperienciaModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
@@ -33,6 +35,7 @@
           (click)="onOpenModal('delete', miexperiencias)"
           data-bs-toggle="modal"
           data-bs-target="#deleteExperienciaModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-trash"></i>
         </button>

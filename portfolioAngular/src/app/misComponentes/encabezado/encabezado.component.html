@@ -22,11 +22,11 @@
                 </li>
                 <!-- si NO esta logueado -->
                 <li class="nav-item">
-                  <a class="nav-link active" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()" aria-current="page" href="#" target="_blank">Ingresar <i class="fa-solid fa-lock-keyhole"></i></a>
+                  <a class="nav-link active" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()" aria-current="page" href="#">Ingresar <i class="fa-solid fa-lock-keyhole"></i></a>
                 </li>
                 <!-- si esta logueado -->
                 <li class="nav-item">
-                  <a class="nav-link active" *ngIf="(auth.isAuthenticated$ | async)" (click)="logout()" aria-current="page" href="#" target="_blank">Salir <i class="fa-solid fa-lock-keyhole-open"></i></a>
+                  <a class="nav-link active" *ngIf="(auth.isAuthenticated$ | async)" (click)="logout()" aria-current="page" href="#">Salir <i class="fa-solid fa-lock-keyhole-open"></i></a>
                 </li>
             </ul>
           </div>

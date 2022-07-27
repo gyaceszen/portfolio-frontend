@@ -10,6 +10,7 @@
       (click)="onOpenModal('add')"
       data-bs-toggle="modal"
       data-bs-target="#agregarEducacionModal"
+      *ngIf="(auth.isAuthenticated$ | async)"
     >
       Añadir
     </button>
@@ -24,6 +25,7 @@
           (click)="onOpenModal('edit', educacion)"
           data-bs-toggle="modal"
           data-bs-target="#editarEducacionModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
@@ -33,6 +35,7 @@
           (click)="onOpenModal('delete', educacion)"
           data-bs-toggle="modal"
           data-bs-target="#deleteEducacionModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-trash"></i>
         </button>

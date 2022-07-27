@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proyectos } from 'src/app/models/proyectos';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-proyectos',
@@ -15,7 +16,7 @@ export class ProyectosComponent implements OnInit {
   public editProyectos: Proyectos | undefined;
   public borrarProyectos: Proyectos | undefined;
 
-  constructor(private proyectosService:ProyectosService) { }
+  constructor(public auth: AuthService, private proyectosService:ProyectosService) { }
 
   ngOnInit(): void {
     this.getProyectos();

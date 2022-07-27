@@ -9,6 +9,7 @@
       (click)="onOpenModal('add')"
       data-bs-toggle="modal"
       data-bs-target="#agregarProyectosModal"
+      *ngIf="(auth.isAuthenticated$ | async)"
     >
       Añadir
     </button>
@@ -23,6 +24,7 @@
           (click)="onOpenModal('edit', misProyectos)"
           data-bs-toggle="modal"
           data-bs-target="#editarProyectosModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
@@ -32,6 +34,7 @@
           (click)="onOpenModal('delete', misProyectos)"
           data-bs-toggle="modal"
           data-bs-target="#deleteProyectosModal"
+          *ngIf="(auth.isAuthenticated$ | async)"
         >
           <i class="fa-solid fa-trash"></i>
         </button>
